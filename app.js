@@ -31,7 +31,7 @@ var app = express();
 app.use(express.json({ limit: '50mb' })); // Adjust this as needed
 app.use(express.urlencoded({ limit: '50mb', extended: true })); 
 app.use(cors({
-  origin: ["http://localhost:5173","http://localhost:5174","http://localhost:3000","http://localhost:3001","http://localhost:3002","https://crm.tecnavis.com","https://milagro.tecnavis.com"],
+  origin: ["http://localhost:5173","http://localhost:5174","http://localhost:3000","http://localhost:3001","http://localhost:3002","https://crm.tecnavis.com","https://wildman.tecnavis.com"],
   method:["PUT","DELETE","PUSH","GET","POST","PATCH"],
   credential:true
 }))
