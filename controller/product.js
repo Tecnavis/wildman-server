@@ -3,7 +3,8 @@ const Product = require("../models/products");
 const ShoppingBag = require("../models/shoppingbag");
 const WhishList = require("../models/favorites");
 const CustomerOrder = require("../models/customerorder")
-// Function to generate new product ID
+
+// // Function to generate new product ID
 const generateProductId = async () => {
   const lastProduct = await Product.findOne().sort({ createdAt: -1 }); // Find the last product by creation time
   let newProductId = "PR-ID0000001"; 
@@ -31,6 +32,15 @@ exports.create = asyncHandler(async (req, res) => {
 
   const productData = {
     mainCategory: req.body.mainCategory,
+    meterial: req.body.meterial,
+    outermeterial: req.body.outermeterial,
+    discount: req.body.discount,
+    gst: req.body.gst,
+    brand: req.body.brand,
+    height: req.body.height,
+    weight: req.body.weight,
+    warrenty: req.body.warrenty,
+    compartment: req.body.compartment,
     coverimage: coverImage,
     subCategory: req.body.subCategory,
     price: parseFloat(req.body.price),

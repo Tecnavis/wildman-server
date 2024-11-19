@@ -3,6 +3,16 @@ const mongoose = require("mongoose");
 const productSchema = new mongoose.Schema({
     
       mainCategory: { type: String, required: true },
+      meterial: { type: String, required: true },
+      outermeterial: { type: String, },
+      discount: { type: Number, },
+      gst: { type: Number,  },
+      brand: { type: String, required: true },
+      height: { type: String, },
+      weight: { type: String,  },
+      warrenty: { type: String,  },
+      compartment: { type: String, },
+      rating: { type: Number, },
       coverimage: { type: String, required: true },
       subCategory: { type: String, required: true },
       price: { type: Number, required: true },
