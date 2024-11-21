@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
-    
+  videoLink: {
+    type: [String], 
+    default: [], 
+  },
       mainCategory: { type: String, required: true },
       meterial: { type: String, required: true },
       outermeterial: { type: String, },

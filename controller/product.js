@@ -42,6 +42,8 @@ exports.create = asyncHandler(async (req, res) => {
     warrenty: req.body.warrenty,
     compartment: req.body.compartment,
     coverimage: coverImage,
+    videoLink: req.body.videoLink, 
+    rating: req.body.rating,
     subCategory: req.body.subCategory,
     price: parseFloat(req.body.price),
     productId: newProductId,
