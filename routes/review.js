@@ -39,10 +39,15 @@ router.delete(
   reviewController.deleteReview
 );
 
-// Get review statistics for a product
+//get all reviews
 router.get(
-  "/stats/:productId",
-  reviewController.getReviewStats
+  "/",
+  reviewController.getAllReviews
 );
+// Get review statistics for a product
+// router.get(
+//   "/stats/:productId",
+//   reviewController.getReviewStats
+// );
 
 module.exports = router;

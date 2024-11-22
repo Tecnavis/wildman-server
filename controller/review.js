@@ -138,62 +138,75 @@ const reviewController = {
       });
     }
   },
-
-  // Get review statistics for a product
-  getReviewStats: async (req, res) => {
-    try {
-      const { productId } = req.params;
-      
-      const stats = await Review.aggregate([
-        { $match: { productId: mongoose.Types.ObjectId(productId) } },
-        {
-          $group: {
-            _id: null,
-            averageRating: { $avg: "$rating" },
-            totalReviews: { $sum: 1 },
-            ratingCounts: {
-              $push: "$rating"
-            }
-          }
-        }
-      ]);
-
-      if (stats.length === 0) {
-        return res.status(200).json({
-          success: true,
-          stats: {
-            averageRating: 0,
-            totalReviews: 0,
-            ratingDistribution: {
-              5: 0, 4: 0, 3: 0, 2: 0, 1: 0
-            }
-          }
-        });
-      }
-
-      // Calculate rating distribution
-      const ratingDistribution = stats[0].ratingCounts.reduce((acc, rating) => {
-        acc[rating] = (acc[rating] || 0) + 1;
-        return acc;
-      }, {});
-
-      res.status(200).json({
-        success: true,
-        stats: {
-          averageRating: Math.round(stats[0].averageRating * 10) / 10,
-          totalReviews: stats[0].totalReviews,
-          ratingDistribution
-        }
-      });
-    } catch (error) {
-      console.error("Error in getReviewStats:", error);
-      res.status(500).json({
-        success: false,
-        message: "Error fetching review statistics",
-        error: error.message,
-      });
-    }
+//get all review
+getAllReviews: async (req, res) => {
+  try {
+    const reviews = await Review.find();
+    res.status(200).json(reviews);
+  } catch (error) {
+    console.error("Error in getAllReviews:", error);
+    res.status(500).json({
+      success: false,
+      message: "Error fetching reviews",
+      error: error.message,
+    });
   }
+}
+  // Get review statistics for a product
+//   getReviewStats: async (req, res) => {
+//     try {
+//       const { productId } = req.params;
+      
+//       const stats = await Review.aggregate([
+//         { $match: { productId: mongoose.Types.ObjectId(productId) } },
+//         {
+//           $group: {
+//             _id: null,
+//             averageRating: { $avg: "$rating" },
+//             totalReviews: { $sum: 1 },
+//             ratingCounts: {
+//               $push: "$rating"
+//             }
+//           }
+//         }
+//       ]);
+
+//       if (stats.length === 0) {
+//         return res.status(200).json({
+//           success: true,
+//           stats: {
+//             averageRating: 0,
+//             totalReviews: 0,
+//             ratingDistribution: {
+//               5: 0, 4: 0, 3: 0, 2: 0, 1: 0
+//             }
+//           }
+//         });
+//       }
+
+//       // Calculate rating distribution
+//       const ratingDistribution = stats[0].ratingCounts.reduce((acc, rating) => {
+//         acc[rating] = (acc[rating] || 0) + 1;
+//         return acc;
+//       }, {});
+
+//       res.status(200).json({
+//         success: true,
+//         stats: {
+//           averageRating: Math.round(stats[0].averageRating * 10) / 10,
+//           totalReviews: stats[0].totalReviews,
+//           ratingDistribution
+//         }
+//       });
+//     } catch (error) {
+//       console.error("Error in getReviewStats:", error);
+//       res.status(500).json({
+//         success: false,
+//         message: "Error fetching review statistics",
+//         error: error.message,
+//       });
+//     }
+//   }
 };
 
 module.exports = reviewController;
