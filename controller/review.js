@@ -115,14 +115,6 @@ const reviewController = {
         });
       }
 
-      // Check if the review belongs to the customer
-      if (review.customerId.toString() !== req.body.customerId) {
-        return res.status(403).json({
-          success: false,
-          message: "Not authorized to delete this review",
-        });
-      }
-
       await Review.findByIdAndDelete(reviewId);
 
       res.status(200).json({
