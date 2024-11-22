@@ -26,6 +26,7 @@ var customercart = require("./routes/customercart");
 var customerorder = require("./routes/customerorder");
 var razorpay = require("./routes/razorpay");
 var review = require("./routes/review");
+var about = require("./routes/about");
 connectDB();
 
 var app = express();
@@ -75,6 +76,7 @@ app.use("/favorite", favorite);
 app.use("/customercart", customercart);
 app.use("/customerorder", customerorder);
 app.use("/razorpay", razorpay);
+app.use("/about", about);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
