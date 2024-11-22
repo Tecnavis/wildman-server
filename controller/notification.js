@@ -60,16 +60,16 @@ exports.delete = async (req, res) => {
 
 // Save return request to the database
 exports.saveReturnRequest = async (req, res) => {
-    const { shopName, productId } = req.body;
+    const { productId } = req.body;
 
-    if (!shopName || !productId) {
-        return res.status(400).json({ error: "Shop Name and Product ID are required" });
+    if ( !productId) {
+        return res.status(400).json({ error: "Product ID is required" });
     }
 
-    const message = `Return requested for Shop: ${shopName}, Product ID: ${productId}`;
+    const message = `Return requested for the Product ID: ${productId}`;
 
     try {
-        const request = new Request({ shopName, productId, message });
+        const request = new Request({  productId, message });
         await request.save();
         res.status(201).json({ success: true, message: 'Return request send successfully' });
     } catch (error) {

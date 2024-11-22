@@ -42,7 +42,7 @@ const customerorderSchema = new Schema({
       },
       deliveryStatus: {
         type: String,
-        enum: ["Out for delivery", "Delivered", "Cancelled", "On transit", "Pending","Returned"],
+        enum: ["Out for delivery", "Delivered", "Cancelled", "On transist", "Pending","Returned"],
         default: "Pending",
       },
       orderDate: {
