@@ -39,8 +39,8 @@ app.use(
       "http://localhost:5174",
       "http://localhost:3002",
       "http://localhost:3001",
-      "https://wildman.tecnavis.com",
-      "https://wildman-admin.tecnavis.com"
+      "https://wildmanpremium.com",
+      "https://admin.wildmanpremium.com"
     ],
     method: ["PUT", "DELETE", "PUSH", "GET", "POST", "PATCH"],
     credential: true,
