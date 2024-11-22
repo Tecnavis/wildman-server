@@ -47,7 +47,7 @@ exports.get = asyncHandler(async (req, res) => {
 
 //update customer
 exports.update = asyncHandler(async (req, res) => {
-    const { name, email, phone, address, shopname } = req.body;
+    const { name, email, phone, address } = req.body;
     const { id } = req.params;
     // Check if email or phone is already being used by another customer
     const emailExists = await Customer.findOne({ email, _id: { $ne: id } });
