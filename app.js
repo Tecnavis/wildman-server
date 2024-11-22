@@ -25,6 +25,7 @@ var favorite = require("./routes/favorites");
 var customercart = require("./routes/customercart");
 var customerorder = require("./routes/customerorder");
 var razorpay = require("./routes/razorpay");
+var review = require("./routes/review");
 connectDB();
 
 var app = express();
@@ -61,6 +62,7 @@ app.use("/subcategory", SubCategory);
 app.use("/admin", admin);
 app.use("/attribute", Attribute);
 app.use("/product", product);
+app.use("/review",review)
 app.use("/warehouse", warehouse);
 app.use("/supplier", supplier);
 app.use("/shopping", shopping);
