@@ -12,6 +12,7 @@ const productSchema = new mongoose.Schema({
       gst: { type: Number,  },
       brand: { type: String, required: true },
       height: { type: String, },
+      length: { type: String, },
       weight: { type: String,  },
       warrenty: { type: String,  },
       compartment: { type: String, },
@@ -28,6 +29,7 @@ const productSchema = new mongoose.Schema({
       tag:{ type: String },
       title: { type: String, required: true },
       description: { type: String, required: true },
+      about: { type: String},
       images: { type: [String], required: true }, 
       color: { type: String, required: true },
       sizes: [

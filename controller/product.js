@@ -2,7 +2,8 @@ const asyncHandler = require("express-async-handler");
 const Product = require("../models/products");
 const ShoppingBag = require("../models/shoppingbag");
 const WhishList = require("../models/favorites");
-const CustomerOrder = require("../models/customerorder")
+const CustomerOrder = require("../models/customerorder");
+const about = require("../models/about");
 
 // // Function to generate new product ID
 const generateProductId = async () => {
@@ -38,6 +39,8 @@ exports.create = asyncHandler(async (req, res) => {
     gst: req.body.gst,
     brand: req.body.brand,
     height: req.body.height,
+    about: req.body.about,
+    length: req.body.length,
     weight: req.body.weight,
     warrenty: req.body.warrenty,
     compartment: req.body.compartment,
