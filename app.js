@@ -40,6 +40,7 @@ app.use(
       "http://localhost:3002",
       "http://localhost:3001",
       "https://wildmanpremium.com",
+      "https://www.wildmanpremium.com",
       "https://admin.wildmanpremium.com"
     ],
     method: ["PUT", "DELETE", "PUSH", "GET", "POST", "PATCH"],
