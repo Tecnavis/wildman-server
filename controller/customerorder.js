@@ -28,6 +28,8 @@ const generateOrderId = async () => {
         Pincode,
         products,
         customerId,
+        gift,
+        giftMessage
       } = req.body;
   
       if (!customerId) {
@@ -52,6 +54,8 @@ const generateOrderId = async () => {
         note,
         Pincode,
         products,
+        gift,
+        giftMessage
       });
   
       await newOrder.save();

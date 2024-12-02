@@ -7,6 +7,13 @@ const customerorderSchema = new Schema({
         unique: true,
         required: true,
       },
+      gift: {
+        type: Boolean,
+        default: false,
+      },
+      giftMessage: {
+        type: String,
+      },
       adminName: String,
       totalAmount: {
         type: Number,
@@ -69,6 +76,8 @@ const customerorderSchema = new Schema({
           price: Number,
           coverImage: String,
           title: String,
+          gst: Number,
+          discount: Number,
         },
         sizeDetails: {
           sizeId: String,
