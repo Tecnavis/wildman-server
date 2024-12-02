@@ -3,7 +3,7 @@ const Product = require("../models/products");
 const ShoppingBag = require("../models/shoppingbag");
 const WhishList = require("../models/favorites");
 const CustomerOrder = require("../models/customerorder");
-const about = require("../models/about");
+// const about = require("../models/about");
 
 // // Function to generate new product ID
 const generateProductId = async () => {
