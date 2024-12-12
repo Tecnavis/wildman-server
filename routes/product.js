@@ -18,6 +18,7 @@ const upload = multer({
   limits: { fileSize: 500 * 1024 * 1024 }, // 500 MB
 }).fields([{ name: 'images', maxCount: 10 }, { name: 'coverimage', maxCount: 1 }]);
 
+
 router.post('/', upload, Controller.create);
 router.get('/',Controller.getAll)
 router.get('/:id',Controller.get)
