@@ -27,6 +27,7 @@ var customerorder = require("./routes/customerorder");
 var razorpay = require("./routes/razorpay");
 var review = require("./routes/review");
 var about = require("./routes/about");
+var coupon = require("./routes/coupon");
 connectDB();
 
 var app = express();
@@ -59,6 +60,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/coupon", coupon);
 app.use("/category", Category);
 app.use("/subcategory", SubCategory);
 app.use("/admin", admin);
