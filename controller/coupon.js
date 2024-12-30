@@ -11,7 +11,7 @@ exports.create= async (req, res) => {
 
 exports.getAll = async (req, res) => {
     try {
-        const data = await Modal.find();
+        const data = await Modal.find().populate('products');
         res.json(data);
     } catch (error) {
         res.json({ message: error.message });
