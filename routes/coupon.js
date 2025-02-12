@@ -7,5 +7,6 @@ router.get('/',controller.getAll)
 router.get('/:id',controller.get)
 router.put('/:id',controller.update)
 router.delete('/:id',controller.delete)
+router.get('/product/:productId', controller.getCouponsByProductId);
 
 module.exports = router;

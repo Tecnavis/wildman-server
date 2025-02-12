@@ -45,3 +45,19 @@ exports.update = async (req, res) => {
     }
 };
 
+exports.getCouponsByProductId = async (req, res) => {
+    try {
+        const { productId } = req.params;
+
+        // Find coupons that include the given product ID
+        const coupons = await Modal.find({ products: productId });
+
+        if (!coupons.length) {
+            return res.status(404).json({ message: 'No coupons found for this product.' });
+        }
+
+        res.status(200).json(coupons);
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
