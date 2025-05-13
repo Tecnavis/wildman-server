@@ -39,7 +39,7 @@ app.use(
       "http://localhost:5173",
       "http://localhost:5174",
       "http://localhost:3002",
-      "http://localhost:3001",
+      "http://localhost:8867",
       "https://wildmanpremium.com",
       "https://www.wildmanpremium.com",
       "https://admin.wildmanpremium.com"
