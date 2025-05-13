@@ -42,7 +42,8 @@ app.use(
       "http://localhost:8867",
       "https://wildmanpremium.com",
       "https://www.wildmanpremium.com",
-      "https://admin.wildmanpremium.com"
+      "https://admin.wildmanpremium.com",
+      "https://wildman-user.onrender.com"
     ],
     method: ["PUT", "DELETE", "PUSH", "GET", "POST", "PATCH"],
     credential: true,
